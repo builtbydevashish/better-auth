@@ -1,9 +1,35 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react';
 
 const SignUpPage = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    async function handleSubmit() {
+        //handle submit logic
+    }
+
     return (
-        <div>SignUpPage</div>
+        <div>
+            <form onSubmit={handleSubmit}>
+
+                <input type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder='Name' />
+                <input type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder='Email' />
+                <input type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder='Password' />
+            </form>
+        </div>
     )
+
 }
 
-export default SignUpPage
+export default SignUpPage;
